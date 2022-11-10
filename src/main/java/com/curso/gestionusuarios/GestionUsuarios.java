@@ -193,7 +193,7 @@ public class GestionUsuarios {
         String msg = sc.nextLine();
         if(users.containsKey(name)){
             User destination = (User) users.get(name);
-            destination.addMessage(msg);
+            destination.addMessage(new Message(msg,userLogged));
             System.out.println("The message was sent succesfully");
         }else{
             System.out.println("The destination doesn't exists");
@@ -204,9 +204,9 @@ public class GestionUsuarios {
     private static void commandSeeInbox(){
         System.out.println("List of your received messages");
         System.out.println("------------------------------------");
-        ArrayList<String> msg = userLogged.getMessages();
-        for(String s : msg){
-            System.out.println(s);
+        ArrayList<Message> msg = userLogged.getMessages();
+        for(Message s : msg){
+            System.out.println("Sender: " + s.getSender().getName() + "\n" + s.getText());
             System.out.println("********************************");
         }
         System.out.println("------------------------------------");
