@@ -16,7 +16,7 @@ public class User {
     private String email;
     private String answerToSecurityQuestion;
     private int numQuestion;
-    private ArrayList<String> messages = new ArrayList<String>();
+    private ArrayList<Message> messages = new ArrayList<Message>();
 
     public User(String name, String password, String email) {
         this.name = name;
@@ -54,11 +54,11 @@ public class User {
         this.password = password;
     }
 
-    public ArrayList<String> getMessages() {
+    public ArrayList<Message> getMessages() {
         return messages;
     }
     
-    public void addMessage(String msg){
+    public void addMessage(Message msg){
         messages.add(msg);
     }
 
